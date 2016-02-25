@@ -377,7 +377,7 @@ def make_app(environ, argv1=None):
         optv = getattr(opts, k, None)
         if optv is not None:
             try:
-                setattr(options, k, type(v)(optv))
+                options[k].set(v.type(optv))
             except:
                 import pdb; pdb.set_trace()
                 raise
